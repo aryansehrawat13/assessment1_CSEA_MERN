@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="form-container">
+        <h1 class="resume">Resume Builder</h1>
+        <form id="resume-form" action="javascript:void(0)" onsubmit="generateResume(event)">
+            <label for="name">Name: </label>
+            <input type="text" id="name" class="name" required>
+            <br>
+            <label for="email">Email: </label>
+            <input type="email" id="email" class="email" required>
+            <br>
+            <label for="phone">Phone: </label>
+            <input type="tel" id="phone" class="phone" required>
+            <br>
+            <label for="linkedinId">LinkedIn ID: </label>
+            <input type="text" id="linkedin" class="linkedinId" required>
+            <br>
+            <label for="github">GitHub ID: </label>
+            <input type="text" id="github" class="github" required>
+            <br>
+            <label for="experience">Experience: </label>
+            <input type="text" id="experience" class="experience" required>
+            <br>
+            <label for="edu">Education: </label>
+            <input type="text" id="edu" class="edu" required>
+            <br>
+            <label for="photo">Upload Photo: </label>
+            <input type="file" id="photo" class="photo" required>
+            <br>   
+            <button type="submit" class="generate">Generate Resume</button>
+        </form>
+    </div>
+
+    <div class="container hidden" id="resume-preview">
+        <h2>Resume Preview</h2>
+        <img id="preview-photo" alt="Profile Photo" style="max-width: 150px; display: block; margin-bottom: 15px;">
+        <div id="resume-content"></div>
+        <button onclick="downloadPDF()">Download</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
